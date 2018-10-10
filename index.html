@@ -6,13 +6,17 @@
   <title>vrTest</title>
   <meta name="description" content="vrTest">
   <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+  <script src="//cdn.rawgit.com/donmccurdy/aframe-extras/v4.2.0/dist/aframe-extras.min.js"></script>
 </head>
 
 <body>
   <a-scene>
     <!-- Asset Store -->
     <a-assets>
-     
+
+      <!-- Checkpoints -->
+      <a-mixin id="checkpoint"></a-mixin>
+      <a-mixin id="checkpoint-hovered" color="#6CEEB5"></a-mixin>
 
 
       <!-- logos -->
@@ -23,13 +27,13 @@
       <a-asset-item id="beagle" src="https://poly.googleapis.com/downloads/0BnDT3T1wTE/85QOHCZOvov/Mesh_Beagle.gltf">
       <a-asset-item id="cow" src="https://poly.googleapis.com/downloads/0OToIgkcVM7/48loxcU-Obv/Cow.gltf">
       <a-asset-item id="unicorn" src="https://poly.googleapis.com/downloads/0fVRHo65E-j/3FcP67Xsa_S/Unicorn_01.gltf">
+      <!-- <a-asset-item id="" src="">
       <a-asset-item id="" src="">
       <a-asset-item id="" src="">
       <a-asset-item id="" src="">
       <a-asset-item id="" src="">
       <a-asset-item id="" src="">
-      <a-asset-item id="" src="">
-      <a-asset-item id="" src="">
+      <a-asset-item id="" src=""> -->
 
 
 
@@ -47,9 +51,40 @@
     </a-assets>
     <!-- End Asset Store -->
 
-    <a-camera>
-      <a-cursor></a-cursor>
-    </a-camera>
+
+    <!-- Camera -->
+
+
+    <!-- Player -->
+    <a-entity id="rig" wasd-controls look-controls movement-controls="controls: checkpoint" checkpoint-controls="mode: animate">
+      <a-entity camera
+                position="0 1.6 0"
+                look-controls="pointerLockEnabled: true">
+        <a-entity cursor
+                  position="0 0 -1"
+                  geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03;"
+                  material="color: #CCC; shader: flat;"></a-entity>
+      </a-entity>
+    </a-entity>
+
+
+
+    <!-- Checkpoints -->
+    <a-entity position="1 0 1">
+    <a-cylinder checkpoint="offset: 0 1.6 0" radius="1" height="0.1" rotation="90 45" position="-7 0 -15" color="#39BB82"></a-cylinder>
+    <a-cylinder checkpoint="offset: 0 1.6 0" radius="1" height="0.1" position="3 0 0" color="#39BB82"></a-cylinder>
+    <a-cylinder checkpoint="offset: 0 1.6 0" radius="1" height="0.1" position="-3 0 0" color="#39BB82"></a-cylinder>
+    </a-entity>
+
+
+
+
+
+
+
+
+
+
 
     <!-- Displayed Logos -->
 

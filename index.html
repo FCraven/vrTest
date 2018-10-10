@@ -1,33 +1,84 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>vrTest</title>
-    <meta name="description" content="vrTest">
-    <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
-  </head>
-  <body>
-    <a-scene>
-      <a-assets>
-        <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg" crossorigin="anonymous">
-        <img id="skyTexture" src="https://cdn.aframe.io/a-painter/images/sky.jpg" crossorigin="anonymous">
-      </a-assets>
 
-      <!-- Primitives. -->
-      <a-box position="-1 0.6 -3" rotation="0 45 0" color="#4CC3D9"></a-box>
-      <a-sphere position="0 1.35 -5" radius="1.25" color="#EF2D5E"></a-sphere>
-      <a-cylinder position="1 0.85 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
-      <a-plane position="0 .1 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
+<head>
+  <meta charset="utf-8">
+  <title>vrTest</title>
+  <meta name="description" content="vrTest">
+  <script src="https://aframe.io/releases/0.8.2/aframe.min.js"></script>
+</head>
 
-      <!-- Background sky. -->
-      <a-sky height="2048" radius="30" src="#skyTexture" theta-length="90" width="2048"></a-sky>
+<body>
+  <a-scene>
+    <!-- Asset Store -->
+    <a-assets>
+     
 
-      <!-- Ground. -->
-      <a-circle src="#groundTexture" rotation="-90 0 0" radius="32"></a-circle>
 
-      <!--Tracked controls. -->
-      <a-entity hand-controls="hand: left"></a-entity>
-      <a-entity hand-controls="hand: right"></a-entity>
-    </a-scene>
-  </body>
+      <!-- logos -->
+      <a-asset-item id="drop-logo" src="https://poly.googleapis.com/downloads/dp5PrzF0k6W/bybIj6jkbX-/logo-drop-lowpoly.gltf">
+      <a-asset-item id="fullstack-logo" src="https://poly.googleapis.com/downloads/0bJ0ctZdJV_/8ordCNfLgAl/logo-fs-lowpoly.gltf">
+
+      <!-- animals -->
+      <a-asset-item id="beagle" src="https://poly.googleapis.com/downloads/0BnDT3T1wTE/85QOHCZOvov/Mesh_Beagle.gltf">
+      <a-asset-item id="cow" src="https://poly.googleapis.com/downloads/0OToIgkcVM7/48loxcU-Obv/Cow.gltf">
+      <a-asset-item id="unicorn" src="https://poly.googleapis.com/downloads/0fVRHo65E-j/3FcP67Xsa_S/Unicorn_01.gltf">
+      <a-asset-item id="" src="">
+      <a-asset-item id="" src="">
+      <a-asset-item id="" src="">
+      <a-asset-item id="" src="">
+      <a-asset-item id="" src="">
+      <a-asset-item id="" src="">
+      <a-asset-item id="" src="">
+
+
+
+
+
+      <a-asset-item id="cliff-swallow" src="https://poly.googleapis.com/downloads/5dl4UWhvuTW/98YtknpxHd7/CliffSwallow.gltf">
+
+
+
+
+
+
+      <img id="groundTexture" src="https://cdn.aframe.io/a-painter/images/floor.jpg" crossorigin="anonymous">
+      <img id="skyTexture" src="https://cdn.aframe.io/a-painter/images/sky.jpg" crossorigin="anonymous">
+    </a-assets>
+    <!-- End Asset Store -->
+
+    <a-camera>
+      <a-cursor></a-cursor>
+    </a-camera>
+
+    <!-- Displayed Logos -->
+
+    <a-gltf-model src="#drop-logo" position=" 0 1.2ww -3" scale='1.5 1.5 1'></a-gltf-model>
+    <a-gltf-model src="#fullstack-logo" position=" 0 2.2 -5"></a-gltf-model>
+
+    <!-- Displayed Animals -->
+    <!-- Animals center position - -10 0 -20 -->
+    <a-gltf-model src="#cliff-swallow" position="-10 0 -20"></a-gltf-model>
+    <a-gltf-model src="#beagle" scale=".01 .01 .01" position="-5 1 -20" ></a-gltf-model>
+    <a-gltf-model src="#cow" scale=".1 .1 .1" position="-4 1 -10" ></a-gltf-model>
+    <a-gltf-model src="#unicorn" scale=".05 .05 .05" position="-4 1 -13" ></a-gltf-model>
+
+
+
+
+
+    <!-- Background sky. -->
+    <a-sky height="2048" radius="30" src="#skyTexture" theta-length="90" width="2048"></a-sky>
+
+    <!-- Ground. -->
+    <a-circle src="#groundTexture" rotation="-90 0 0" radius="32"></a-circle>
+
+
+
+
+
+
+  </a-scene>
+</body>
+
 </html>
